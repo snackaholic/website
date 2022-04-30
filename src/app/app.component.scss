@@ -1,19 +1,23 @@
-main {
-    padding: 0 5rem;
-}
-
 section {
-    padding: 5rem 0;
     max-width: 960px;
     margin: 0 auto;
+
+    &.full-size {
+        padding: 0;
+        max-width: 100%;
+        margin: auto;
+    }
 }
 
+main section + section {
+    padding-top: 2rem;
+}
+
+
+
 @media screen and (max-width: 960px) {
-    main {
-        padding: 0 2rem;
-    }
 
     section {
-        padding: 2rem 0;
+        padding: 2rem;
     }
 }
