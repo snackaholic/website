@@ -22,7 +22,8 @@
                 display: flex;
                 justify-content: center;
                 list-style-type: none;
-                margin:0;
+                margin: 0;
+                padding: 0;
 
                 li {
                     padding: 2rem;
@@ -58,42 +59,41 @@
 }
 
 @media screen and (max-width: 960px) {
-    :host {
-        .nav-wrap {
-            box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.4);
+    .nav-wrap {
+        padding: 0 2rem;
+        box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.4);
+        background: white;
 
-            .nav-flex-wrap {
-                nav {
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    background: white;
+        .nav-flex-wrap {
+            nav {
+                justify-content: space-between;
+                flex-wrap: wrap;
+                background: white;
 
-                    ul {
-                        width: 100%;
-                        display: none;
-                        flex-direction: column;
+                ul {
+                    width: 100%;
+                    display: none;
+                    flex-direction: column;
 
-                        li {
+                    li {
+                        padding: 1rem;
+
+                        a {
                             padding: 1rem;
-
-                            a {
-                                padding: 1rem;
-                                border-bottom: 1px solid;
-                                color: gray;
-                            }
+                            border-bottom: 1px solid;
+                            color: gray;
                         }
                     }
+                }
 
-                    .visible {
-                        display: block !important;
-                    }
+                .visible {
+                    display: block !important;
+                }
 
-                    #toggle-menu-button {
-                        display: block;
-                    }
+                #toggle-menu-button {
+                    display: block;
                 }
             }
         }
     }
-
 }
