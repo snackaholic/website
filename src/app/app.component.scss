@@ -1,0 +1,19 @@
+main {
+    padding: 0 5rem;
+}
+
+section {
+    padding: 5rem 0;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 960px) {
+    main {
+        padding: 0 2rem;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+}

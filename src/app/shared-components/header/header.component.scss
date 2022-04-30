@@ -1,4 +1,5 @@
-header {
+:host {
+    display: block;
     max-width: 100%;
     width: 100vw;
     height: 100vh;
@@ -22,7 +23,7 @@ header {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 1rem;
+                padding: 1rem 0;
 
                 #toggle-menu-button {
                     display: none;
@@ -96,7 +97,7 @@ header {
 }
 
 @media screen and (max-width: 960px) {
-    header {
+    :host {
         .nav-wrap {
             box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.4);
 
