@@ -1,0 +1,25 @@
+h2 {
+    text-align:center;
+}
+
+.flex-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+app-service {
+    flex-basis: 30%;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 760px){
+    .flex-wrap {
+        flex-direction: column;
+    }
+
+    app-service {
+        flex-basis: 100%;
+        text-align: center;
+    }
+}
