@@ -8,6 +8,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ServiceComponent } from './service/service.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     PortfolioComponent,
     BlogComponent,
     ContactComponent,
-    NavigationComponent],
+    NavigationComponent,
+    ServiceComponent],
   exports: [
     HeaderComponent,
     AboutmeComponent,
