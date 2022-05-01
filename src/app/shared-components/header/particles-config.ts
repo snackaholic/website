@@ -8,13 +8,13 @@ export const ParticlesConfig = {
         }
       },
       color: {
-        value: '#122e45'
+        value: '#273585'
       },
       shape: {
         type: 'polygon',
         stroke: {
           width: 1,
-          color: '#122e45'
+          color: '#273585'
         },
         polygon: {
           nb_sides: 6

@@ -22,4 +22,8 @@ app-service {
         flex-basis: 100%;
         text-align: center;
     }
+
+    app-service + app-service {
+        margin-top:1rem;
+    }
 }

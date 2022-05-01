@@ -2,10 +2,15 @@
     display: flex;
     align-content: space-between;
     gap: 1rem;
+    flex-direction: row;
+}
+
+h2 {
+    margin-bottom:2rem;
 }
 
 @media screen and (max-width: 760px){
     :host {
-        display: block;
+        flex-direction: column;
     }
 }
