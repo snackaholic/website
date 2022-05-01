@@ -1,0 +1,58 @@
+.experience {
+    display: flex;
+
+    h3 {
+        margin-top: 0;
+    }
+
+
+    .time {
+        flex-basis: 45%;
+        text-align: right;
+    }
+
+    .line {
+        flex-basis:10%;
+        position: relative;
+
+        .innerline {
+            margin: 0 auto;
+            width: 1px;
+            height: 100%;
+            background-color: gray;
+            position: relative;
+            .dot {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top:0;
+                left: -10px;
+                border-radius: 50%;
+                background-color: red;
+            }
+        }
+    }
+
+    .text {
+        flex-basis: 45%;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 760px){
+    .experience {
+        flex-direction: column;
+        position: relative;
+        padding-left: 2rem;
+
+        .time, .text {
+            text-align: left;
+        }
+
+        .line {
+            position: absolute;
+            left: 0;
+            height: 100%;
+        }
+    }
+}

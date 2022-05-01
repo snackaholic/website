@@ -3,6 +3,14 @@
     z-index: 3;
     width: 100%;
 
+    .scrolled-image {
+        display: none;
+    }
+
+    .unscrolled-image {
+        display: block;
+    }
+
     .nav-flex-wrap {
         max-width: 960px;
         margin: 0 auto;
@@ -26,8 +34,7 @@
                 padding: 0;
 
                 li {
-                    padding: 2rem;
-
+                    padding: 1rem;
                     a {
                         color: white;
                         display: block;
@@ -43,6 +50,14 @@
         position: fixed;
         background: white;
         box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.4);
+
+        .scrolled-image {
+            display: block;
+        }
+
+        .unscrolled-image {
+            display: none;
+        }
 
         .nav-flex-wrap {
             nav {
@@ -63,6 +78,15 @@
         padding: 0 2rem;
         box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.4);
         background: white;
+
+        .scrolled-image {
+            display: block;
+            height: 36px;
+        }
+    
+        .unscrolled-image {
+            display: none;
+        }
 
         .nav-flex-wrap {
             nav {
