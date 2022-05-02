@@ -26,6 +26,25 @@ export class NavigationComponent implements OnInit {
     }
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    if (window.innerWidth > 960) {
+      const menuOpen = document.getElementById("toggle-menu-button-open");
+      if (menuOpen != null) {
+        menuOpen.style.display = "none";
+      }
+      const menu = document.getElementById("toggle-menu-button");
+      if (menu != null) {
+        menu.style.display = "";
+      }
+      if (this.menu.nativeElement != null) {
+        if (this.menu.nativeElement.classList.contains("visible")) {
+          this.menu.nativeElement.classList.remove("visible");
+        }
+      }
+    }
+  }
+
   toggleMenu(): void {
     const menuOpen = document.getElementById("toggle-menu-button-open");
     const menu = document.getElementById("toggle-menu-button");
