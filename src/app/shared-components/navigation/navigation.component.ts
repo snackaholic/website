@@ -11,12 +11,12 @@ export class NavigationComponent implements OnInit {
   menu!: ElementRef;
 
   @ViewChild('nav')
-  nav! : ElementRef;
+  nav!: ElementRef;
 
-  @HostListener('window:scroll', ['$event']) 
-  onScroll(event : Event) {
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
     let distanceScrolled = document.documentElement.scrollTop;
-    let nav : HTMLElement | null = this.nav.nativeElement;
+    let nav: HTMLElement | null = this.nav.nativeElement;
     if (nav != null) {
       if (distanceScrolled > 10) {
         nav.classList.add("scrolled");
@@ -26,12 +26,26 @@ export class NavigationComponent implements OnInit {
     }
   }
 
-  toggleMenu() : void {
-    if(this.menu.nativeElement != null) {
-      if(this.menu.nativeElement.classList.contains("visible")) {
+  toggleMenu(): void {
+    const menuOpen = document.getElementById("toggle-menu-button-open");
+    const menu = document.getElementById("toggle-menu-button");
+    if (this.menu.nativeElement != null) {
+      if (this.menu.nativeElement.classList.contains("visible")) {
         this.menu.nativeElement.classList.remove("visible");
+        if (menu != null) {
+          menu.style.display = "inline";
+        }
+        if (menuOpen != null) {
+          menuOpen.style.display = "none";
+        }
       } else {
         this.menu.nativeElement.classList.add("visible");
+        if (menu != null) {
+          menu.style.display = "none";
+        }
+        if (menuOpen != null) {
+          menuOpen.style.display = "inline";
+        }
       }
     }
   }
