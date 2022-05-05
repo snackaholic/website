@@ -28,7 +28,7 @@ export class NavigationComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    if (window.innerWidth > 960) {
+    if (window.innerWidth > 768) {
       const menuOpen = document.getElementById("toggle-menu-button-open");
       if (menuOpen != null) {
         menuOpen.style.display = "none";
