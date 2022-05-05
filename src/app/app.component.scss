@@ -1,3 +1,6 @@
+@import "../sass/_variables";
+@import "../sass/_mixins";
+
 h2 {
     margin-bottom: 5rem;
 }
@@ -13,8 +16,8 @@ section {
 }
 
 footer {
-    background: #232132;
-    color: #fdfdfd;
+    background: $main-color;
+    color: $white;
     padding: 5rem 0;
 }
 
@@ -25,11 +28,10 @@ footer {
 
 
 #services {
-    background: rgba(39, 53, 133, 50%);
+    background: $accent-color-50;
 }
 
-@media screen and (max-width: 960px) {
-
+@include laptop {
     h2 {
         margin-bottom: 3rem;
     }

@@ -1,3 +1,5 @@
+@import "../../../sass/_mixins";
+
 h2 {
     text-align:center;
 }
@@ -13,7 +15,7 @@ app-service {
 }
 
 
-@media screen and (max-width: 760px){
+@include tablet {
     .flex-wrap {
         flex-direction: column;
     }

@@ -10,7 +10,7 @@ export class ContactComponent implements OnInit {
 
   location : IService = {
     heading : "Standort",
-    text : "Dennis Lange\nDahler Heide 69\n33100 Paderborn",
+    text : "33100 Paderborn",
     imageSource : "assets/icons/place_black_24dp.svg"
   };
 
@@ -22,7 +22,7 @@ export class ContactComponent implements OnInit {
 
   phone : IService = {
     heading : "Telefon",
-    text : "016093507143",
+    text : "+4916093507143",
     imageSource : "assets/icons/call_black_24dp.svg"
   };
 

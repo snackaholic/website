@@ -1,7 +1,9 @@
+@import "../../../sass/variables";
+@import "../../../sass/_mixins";
+
 h2 {
     text-align: center;
 }
-
 
 .experience {
     display: flex;
@@ -24,7 +26,7 @@ h2 {
             margin: 0 auto;
             width: 1px;
             height: 100%;
-            background-color: gray;
+            background-color: $main-color-50;
             position: relative;
             .dot {
                 width: 20px;
@@ -33,7 +35,7 @@ h2 {
                 top:0;
                 left: -10px;
                 border-radius: 50%;
-                background-color: #273585;
+                background-color: $accent-color;
             }
         }
     }
@@ -44,7 +46,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 760px){
+@include tablet {
     .experience {
         flex-direction: column;
         position: relative;

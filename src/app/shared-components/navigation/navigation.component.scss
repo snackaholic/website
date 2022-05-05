@@ -1,3 +1,6 @@
+@import "../../../sass/variables";
+@import "../../../sass/_mixins";
+
 .nav-wrap {
     position: fixed;
     z-index: 3;
@@ -37,7 +40,7 @@
                 li {
                     padding: 1rem;
                     a {
-                        color: #fdfdfd;
+                        color: $white;
                         display: block;
                         text-decoration: none;
                     }
@@ -49,7 +52,7 @@
     &.scrolled {
         width: 100%;
         position: fixed;
-        background: #fdfdfd;
+        background: $white;
         box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.4);
 
         .scrolled-image {
@@ -65,7 +68,7 @@
                 ul {
                     li {
                         a {
-                            color: #232132;
+                            color: $main-color;
                         }
                     }
                 }
@@ -74,11 +77,11 @@
     }
 }
 
-@media screen and (max-width: 960px) {
+@include tablet {
     .nav-wrap {
         padding: 0 2rem;
         box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.4);
-        background: #fdfdfd;
+        background: $white;
 
         .scrolled-image {
             display: block;
@@ -93,7 +96,7 @@
             nav {
                 justify-content: space-between;
                 flex-wrap: wrap;
-                background: #fdfdfd;
+                background: $white;
 
                 ul {
                     width: 100%;
@@ -106,7 +109,7 @@
                         a {
                             padding: 1rem;
                             border-bottom: 1px solid;
-                            color: #232132;
+                            color: $main-color;
                         }
                     }
                 }
