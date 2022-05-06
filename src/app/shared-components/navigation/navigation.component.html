@@ -5,8 +5,8 @@
                 <img class="scrolled-image" src="assets/dennis_lange_softwaredevelopment_logo.png" width="auto" height="48" />
                 <img class="unscrolled-image" src="assets/dennis_lange_softwaredevelopment_logo_light.png" width="auto" height="48" />
             </a>
-            <img id="toggle-menu-button" (click)="toggleMenu()" src="assets/icons/menu_black_24dp.svg" />
-            <img id="toggle-menu-button-open" style="display:none" (click)="toggleMenu()" src="assets/icons/menu_open_black_24dp.svg" />
+            <img #toggleMenuButton id="toggle-menu-button" (click)="toggleMenu()" src="assets/icons/menu_black_24dp.svg" />
+            <img #toggleMenuButtonOpen id="toggle-menu-button-open" style="display:none" (click)="toggleMenu()" src="assets/icons/menu_open_black_24dp.svg" />
             <ul #menu>
                 <li>
                     <a href="#aboutme">Über mich</a>

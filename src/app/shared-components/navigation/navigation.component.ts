@@ -7,6 +7,12 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 })
 export class NavigationComponent implements OnInit {
 
+  @ViewChild('toggleMenuButton')
+  toggleMenuButton!: ElementRef;
+
+  @ViewChild('toggleMenuButtonOpen')
+  toggleMenuButtonOpen!: ElementRef;
+
   @ViewChild('menu')
   menu!: ElementRef;
 
@@ -26,47 +32,57 @@ export class NavigationComponent implements OnInit {
     }
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    if (window.innerWidth > 768) {
-      const menuOpen = document.getElementById("toggle-menu-button-open");
-      if (menuOpen != null) {
-        menuOpen.style.display = "none";
-      }
-      const menu = document.getElementById("toggle-menu-button");
-      if (menu != null) {
-        menu.style.display = "";
-      }
-      if (this.menu.nativeElement != null) {
-        if (this.menu.nativeElement.classList.contains("visible")) {
-          this.menu.nativeElement.classList.remove("visible");
-        }
-      }
+  @HostListener('window:click', ['$event'])
+  onClick(event: Event) {
+    if (event.target == null) {
+      return;
+    }
+    // if menu is not visible ignore clicks
+    if (!this.menu.nativeElement.classList.contains("visible")) {
+      return;
+    }
+    // if click target is menu close / open button ignore click
+    if (event.target === this.toggleMenuButton.nativeElement ||
+      event.target === this.toggleMenuButtonOpen.nativeElement) {
+      return;
+    }
+    // if click is outside of menu -> close it
+    if (!this.containsElement(this.menu.nativeElement, event.target as HTMLElement)) {
+      this.hideMenu();
     }
   }
 
-  toggleMenu(): void {
-    const menuOpen = document.getElementById("toggle-menu-button-open");
-    const menu = document.getElementById("toggle-menu-button");
-    if (this.menu.nativeElement != null) {
-      if (this.menu.nativeElement.classList.contains("visible")) {
-        this.menu.nativeElement.classList.remove("visible");
-        if (menu != null) {
-          menu.style.display = "inline";
-        }
-        if (menuOpen != null) {
-          menuOpen.style.display = "none";
-        }
-      } else {
-        this.menu.nativeElement.classList.add("visible");
-        if (menu != null) {
-          menu.style.display = "none";
-        }
-        if (menuOpen != null) {
-          menuOpen.style.display = "inline";
-        }
-      }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    if (window.innerWidth > 768) {
+      this.menu.nativeElement.classList.remove("visible");
+      this.toggleMenuButton.nativeElement.style.display = "";
+      this.toggleMenuButtonOpen.nativeElement.style.display = "none";
     }
+  }
+
+  hideMenu(): void {
+    this.menu.nativeElement.classList.remove("visible");
+    this.toggleMenuButton.nativeElement.style.display = "inline";
+    this.toggleMenuButtonOpen.nativeElement.style.display = "none";
+  }
+
+  showMenu(): void {
+    this.menu.nativeElement.classList.add("visible");
+    this.toggleMenuButton.nativeElement.style.display = "none";
+    this.toggleMenuButtonOpen.nativeElement.style.display = "inline";
+  }
+
+  toggleMenu(): void {
+    if (this.menu.nativeElement.classList.contains("visible")) {
+      this.hideMenu();
+    } else {
+      this.showMenu();
+    }
+  }
+
+  containsElement(parent: HTMLElement, child: HTMLElement) {
+    return parent !== child && parent.contains(child);
   }
 
   constructor() { }
