@@ -3,12 +3,16 @@
 :host {
     display: flex;
     align-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
     flex-direction: row;
 }
 
 h2 {
     margin-bottom:2rem;
+}
+
+img {
+    max-width: 100%;
 }
 
 @include tablet {
@@ -21,5 +25,13 @@ h2 {
     img {
         width: 100%;
         height: auto;
+    }
+}
+
+button {
+    @include button;
+
+    & + button {
+        background-color: $main-color;
     }
 }
