@@ -9,6 +9,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ServiceComponent } from './service/service.component';
+import { SocialsComponent } from './socials/socials.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ServiceComponent } from './service/service.component';
     BlogComponent,
     ContactComponent,
     NavigationComponent,
-    ServiceComponent],
+    ServiceComponent,
+    SocialsComponent],
   exports: [
     HeaderComponent,
     AboutmeComponent,
@@ -30,7 +32,8 @@ import { ServiceComponent } from './service/service.component';
     PortfolioComponent,
     BlogComponent,
     ContactComponent,
-    NavigationComponent
+    NavigationComponent,
+    SocialsComponent
   ],
   imports: [
     CommonModule
