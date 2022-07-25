@@ -28,10 +28,11 @@ img {
     }
 }
 
-button {
+a {
     @include button;
+    text-decoration: none;
 
-    & + button {
+    & + a {
         background-color: $main-color;
     }
 }

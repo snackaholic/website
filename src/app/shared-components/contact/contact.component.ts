@@ -10,7 +10,7 @@ export class ContactComponent implements OnInit {
 
   location : IService = {
     heading : "Standort",
-    text : "33100 Paderborn",
+    text : "26382 Wilhelmshaven",
     imageSource : "assets/icons/place_black_24dp.svg"
   };
 
