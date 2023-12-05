@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ServiceComponent } from './service/service.component';
 import { SocialsComponent } from './socials/socials.component';
+import { TyperComponent } from './typer/typer.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SocialsComponent } from './socials/socials.component';
     ContactComponent,
     NavigationComponent,
     ServiceComponent,
-    SocialsComponent],
+    SocialsComponent,
+    TyperComponent],
   exports: [
     HeaderComponent,
     AboutmeComponent,
