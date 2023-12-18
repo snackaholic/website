@@ -23,7 +23,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1em 0;
 
             #toggle-menu-button,
             #toggle-menu-button-open {
@@ -97,6 +97,7 @@
                 justify-content: space-between;
                 flex-wrap: wrap;
                 background: $white;
+                padding: 0.5em 0;
 
                 ul {
                     width: 100%;

@@ -11,7 +11,7 @@ export class ServicesComponent implements OnInit {
   services : IService[] = [
     {
       heading : "Webdesign",
-      text : "Design und technische Betreuung Ihrer individuellen Webpräsenz",
+      text : "Design und technische Betreuung deiner individuellen Webpräsenz",
       imageSource : "assets/icons/html_black_24dp.svg"
     },
     {
