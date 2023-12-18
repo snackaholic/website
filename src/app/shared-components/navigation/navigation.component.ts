@@ -38,7 +38,7 @@ export class NavigationComponent implements OnInit {
       return;
     }
     // if menu is not visible ignore clicks
-    if (!this.menu.nativeElement.classList.contains("visible")) {
+    if (!this.isMenuVisible()) {
       return;
     }
     // if click target is menu close / open button ignore click
@@ -50,6 +50,10 @@ export class NavigationComponent implements OnInit {
     if (!this.containsElement(this.menu.nativeElement, event.target as HTMLElement)) {
       this.hideMenu();
     }
+  }
+
+  private isMenuVisible() {
+    return this.menu.nativeElement.classList.contains("visible");
   }
 
   @HostListener('window:resize', ['$event'])
@@ -74,7 +78,7 @@ export class NavigationComponent implements OnInit {
   }
 
   toggleMenu(): void {
-    if (this.menu.nativeElement.classList.contains("visible")) {
+    if (this.isMenuVisible()) {
       this.hideMenu();
     } else {
       this.showMenu();
