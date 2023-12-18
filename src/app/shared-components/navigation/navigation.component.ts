@@ -66,9 +66,11 @@ export class NavigationComponent implements OnInit {
   }
 
   hideMenu(): void {
-    this.menu.nativeElement.classList.remove("visible");
-    this.toggleMenuButton.nativeElement.style.display = "inline";
-    this.toggleMenuButtonOpen.nativeElement.style.display = "none";
+    if(this.isMenuVisible()) {
+      this.menu.nativeElement.classList.remove("visible");
+      this.toggleMenuButton.nativeElement.style.display = "inline";
+      this.toggleMenuButtonOpen.nativeElement.style.display = "none";
+    }
   }
 
   showMenu(): void {
