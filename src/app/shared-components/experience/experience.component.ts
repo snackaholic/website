@@ -10,8 +10,14 @@ export class ExperienceComponent implements OnInit {
 
   experiences : IExperience[] = [
     {
+      company : "Uelzener Allgemeine Versicherungs-Gesellschaft a.G.",
+      period : "August 2022 - laufend",
+      title : "Fullstack Softwareentwicklung",
+      points : ["Weiterentwicklung der Anwendungslandschaft", "Planung und Gestaltung der zukünftigen Enterprise-Service-Landschaft"]
+    },
+    {
       company : "Jobware GmbH",
-      period : "Oktober 2020 - laufend",
+      period : "Oktober 2020 - August 2022",
       title : "Fullstack Softwareentwicklung",
       points : ["Relaunch des Webauftritts der Jobware GmbH", "Konzeptionierung und Entwicklung diverser Microservices für die Webseite"]
     },
