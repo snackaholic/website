@@ -1,29 +1,28 @@
 @import "../../../sass/_variables";
 
-:host > * {
+:host>* {
     background: $main-color;
-    color:$white;
+    color: $white;
     min-height: 100vh;
+}
 
-    h2 {
-        text-align: center;
-        margin-bottom: 5rem;
-    }
+h2 {
+    text-align: center;
+    margin-bottom: 5rem;
+}
 
-    section {
-        padding: 5rem 1rem;
-    }
-    
-    .width-limitizer {
-        max-width: 960px;
-        margin: 0 auto;
-    }
+section {
+    padding: 5rem 1rem;
+}
 
-    #particles-js {
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    
+.width-limitizer {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#particles-js {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
 }

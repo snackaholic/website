@@ -30,7 +30,7 @@ install utils
 `npm install -g angular-cli-ghpages`
 
 build the application
-`ng build --prod --base-href https://snackaholic.github.io/website/`
+`ng build --base-href https://snackaholic.github.io/website/`
 
 upload changes
 `ngh --dir=dist/website`
