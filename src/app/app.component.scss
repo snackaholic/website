@@ -1,49 +1,30 @@
 @import "../sass/_variables";
 @import "../sass/_mixins";
 
-h2 {
-    margin-bottom: 5rem;
-}
-
-section {
-    padding: 5rem 0;
-
-    &.full-size {
-        padding: 0;
-        max-width: 100%;
-        margin: auto;
-    }
-}
-
 footer {
+    font-size: 0.8rem;
     background: $main-color;
-    color: $white;
-    padding: 5rem 0;
-}
-
-.width-limitizer {
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-app-socials {
-    max-width: 320px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 5rem;
-}
+    color: $white-50;
 
 
-#services {
-    background: $accent-color-50;
-}
+    .flexWrapper {
+        display: flex;
+        max-width: 960px;
+        margin: 0 auto;
+        justify-content: space-between;
 
-@include laptop {
-    h2 {
-        margin-bottom: 3rem;
+        ul {
+            list-style-type: none;
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
     }
+}
 
-    section {
-        padding: 3rem 2rem;
+@include tablet {
+    footer {
+        padding: 0 2rem;
     }
 }

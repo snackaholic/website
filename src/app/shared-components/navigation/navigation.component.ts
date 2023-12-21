@@ -7,6 +7,9 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 })
 export class NavigationComponent implements OnInit {
 
+  scrolled : boolean = false;
+  applyScrollEffect : boolean = true;
+
   @ViewChild('toggleMenuButton')
   toggleMenuButton!: ElementRef;
 
@@ -21,13 +24,16 @@ export class NavigationComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
+    if (!this.applyScrollEffect) {
+      return;
+    }
     let distanceScrolled = document.documentElement.scrollTop;
     let nav: HTMLElement | null = this.nav.nativeElement;
     if (nav != null) {
       if (distanceScrolled > 10) {
-        nav.classList.add("scrolled");
+        this.scrolled = true;
       } else {
-        nav.classList.remove("scrolled");
+        this.scrolled = false;
       }
     }
   }

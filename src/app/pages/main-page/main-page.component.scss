@@ -1,0 +1,53 @@
+@import "../../../sass/_variables";
+@import "../../../sass/_mixins";
+
+h2 {
+    margin-bottom: 5rem;
+}
+
+section {
+    padding: 5rem 0;
+
+    &.full-size {
+        padding: 0;
+        max-width: 100%;
+        margin: auto;
+    }
+}
+
+.width-limitizer {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+
+#services {
+    background: $accent-color-50;
+}
+
+
+
+#contact {
+    background: $main-color;
+    color: $white;
+    padding: 5rem 0;
+}
+
+app-socials {
+    max-width: 320px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+
+@include laptop {
+    h2 {
+        margin-bottom: 3rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+}
