@@ -8,21 +8,23 @@ import { TyperConfig } from 'src/app/core/types/typerconfig';
 })
 export class TyperComponent implements OnInit, OnDestroy {
 
-  config : TyperConfig = 
+  config: TyperConfig =
     {
-      typeSpeed : 120,
+      timeoutCounter: 20,
+      typeSpeed: 80,
       heading: "Dein Ansprechspartner für",
-      texts : ["Realisierung und Betreuung deines Webauftritts", "Implementierung, Konfiguration und Wartung von Softwarelösungen", "Portierung von Altsystemen in neue Technologien"]
+      texts: ["Realisierung und Betreuung deines Webauftritts", "Implementierung, Konfiguration und Wartung von Softwarelösungen", "Portierung von Altsystemen in neue Technologien"]
     };
 
-  intervalReference : any;
-  currentlyPrintedTextIndex:number = 0;
-  currentlyPrintedTextLetterIndex:number = 0;
-  leftToRight:boolean=true;
+  intervalReference: any;
+  currentlyPrintedTextIndex: number = 0;
+  currentlyPrintedTextLetterIndex: number = 0;
+  wordTimeoutCounter = 0;
+  leftToRight: boolean = true;
 
   viewText: string = "";
-  viewHeading : string = "";
-  
+  viewHeading: string = "";
+
   constructor() { }
 
   ngOnDestroy(): void {
@@ -34,21 +36,27 @@ export class TyperComponent implements OnInit, OnDestroy {
     this.intervalReference = setInterval(() => {
       var word = this.config.texts[this.currentlyPrintedTextIndex];
       var ln = word.length;
-  
-      if(this.leftToRight){
-        this.viewText = word.slice(0,this.currentlyPrintedTextLetterIndex);
+
+      if (this.leftToRight) {
+        this.viewText = word.slice(0, this.currentlyPrintedTextLetterIndex);
         this.currentlyPrintedTextLetterIndex++;
       };
-      if(this.currentlyPrintedTextLetterIndex===ln+1){this.leftToRight=false};
-      if(!this.leftToRight){
-        this.viewText = word.slice(0,this.currentlyPrintedTextLetterIndex);
+      if (this.currentlyPrintedTextLetterIndex === ln + 1) { this.leftToRight = false };
+
+      if (!this.leftToRight) {
+        if (this.wordTimeoutCounter < this.config.timeoutCounter) {
+          this.wordTimeoutCounter++;
+          return;
+        }
+        this.viewText = word.slice(0, this.currentlyPrintedTextLetterIndex);
         this.currentlyPrintedTextLetterIndex--;
       }
-      if(this.currentlyPrintedTextLetterIndex===0){
-        this.leftToRight=true;
+      if (this.currentlyPrintedTextLetterIndex === 0) {
+        this.leftToRight = true;
         this.currentlyPrintedTextIndex++;
+        this.wordTimeoutCounter = 0;
       }
-      if(this.currentlyPrintedTextIndex===this.config.texts.length){this.currentlyPrintedTextIndex=0}
+      if (this.currentlyPrintedTextIndex === this.config.texts.length) { this.currentlyPrintedTextIndex = 0 }
     }, this.config.typeSpeed);
   }
 
