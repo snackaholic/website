@@ -20,14 +20,14 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Deploy to github pages
 
+install utils
+`npm install -g angular-cli-ghpages`
+
 switch branch
 `git checkout -b gh-pages`
 
 push changes
 `git push origin gh-pages`
-
-install utils
-`npm install -g angular-cli-ghpages`
 
 build the application
 `ng build --base-href https://snackaholic.github.io/website/`
