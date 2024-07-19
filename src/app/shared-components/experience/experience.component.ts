@@ -19,7 +19,7 @@ export class ExperienceComponent implements OnInit {
       company : "Jobware GmbH",
       period : "Oktober 2020 - August 2022",
       title : "Fullstack Softwareentwicklung",
-      points : ["Relaunch des Webauftritts der Jobware GmbH", "Konzeptionierung und Entwicklung diverser Microservices für die Webseite"]
+      points : ["Relaunch des Webauftritts der Jobware GmbH inkl. neuem Kundenportal 'Mein Jobware'", "Konzeptionierung und Entwicklung diverser Microservices für die Webseite"]
     },
     {
       company : "Jobware GmbH",
